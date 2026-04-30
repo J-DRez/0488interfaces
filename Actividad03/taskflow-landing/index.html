@@ -1,21 +1,264 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>TaskFlow Landing</title>
-</head>
-<body>
-  <header class="px-6 py-4">
-    <div class="max-w-7xl flex items-center justify-between">
-      <div class="text-2xl font-bold">TaskFlow</div>
-      <nav class="flex items-center space-x-6">
-        <a href="#">Funciones</a>
-        <a href="#">Precios</a>
-        <a href="#">Testimonios</a>
-        <button>Empezar Gratis</button>
-      </nav>
-    </div>
-  </header>
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 3 - TaskFlow</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
+
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <span class="text-xl font-bold text-gray-900 dark:text-white">TaskFlow</span>
+        <nav class="flex items-center gap-6">
+          <a href="#" class="hidden md:block text-sm text-gray-600 dark:text-gray-300">Funciones</a>
+          <a href="#" class="hidden md:block text-sm text-gray-600 dark:text-gray-300">Precios</a>
+          <a href="#" class="hidden md:block text-sm text-gray-600 dark:text-gray-300">Testimonios</a>
+          <!-- Aportación de la IA: No quise usar emoji y le pedí que implementara iconos -->
+          <!-- Toggle dark mode -->
+          <button id="theme-toggle" type="button" class="text-gray-600 dark:text-gray-300">
+            <!-- Luna (visible en modo claro) -->
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <!-- Sol (visible en modo oscuro, oculto por defecto) -->
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+          <button type="button" class="hidden md:block bg-indigo-600 text-white text-sm px-6 py-3 rounded-lg transition-all duration-200 hover:bg-indigo-700">Empezar gratis</button>
+          <!-- Botón hamburguesa visible solo en móvil -->
+          <button type="button" class="md:hidden text-gray-600 dark:text-gray-300 text-2xl">☰</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- Hero -->
+      <section class="py-12 md:py-16 lg:py-24 bg-linear-to-b from-indigo-50 to-white dark:from-gray-900 dark:to-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span class="inline-block animate-pulse bg-indigo-50 dark:bg-indigo-600/10 text-indigo-700 dark:text-indigo-400 text-sm font-medium px-4 py-1 rounded-full mb-6">La herramienta #1 en productividad</span>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6">Organiza tu equipo.<br>Potencia tus proyectos.</h1>
+          <p class="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8">Descubre cómo TaskFlow puede transformar la forma en que gestionas tu trabajo y colaboras con tu equipo.</p>
+          <div class="flex flex-col md:flex-row justify-center gap-4">
+            <button type="button" class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-200 hover:bg-indigo-700">Empezar gratis →</button>
+            <button type="button" class="border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white px-6 py-3 rounded-lg transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800">Ver demo</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="py-12 md:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Todo lo que necesitas para ser productivo</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-12">Herramientas diseñadas para equipos que quieren hacer más en menos tiempo.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Feature 1 -->
+            <div class="group p-6 text-left bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm transition-all duration-300 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-400">
+              <span class="text-2xl inline-block mb-4 transition-transform duration-300 group-hover:scale-110">📋</span>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Tableros Kanban</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Organiza tus tareas visualmente y mantén a todo tu equipo alineado en cada proyecto.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="group p-6 text-left bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm transition-all duration-300 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-400">
+              <span class="text-2xl inline-block mb-4 transition-transform duration-300 group-hover:scale-110">⏱️</span>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Time Tracking</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Registra el tiempo dedicado a cada tarea y mejora la estimación de proyectos futuros.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="group p-6 text-left bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm transition-all duration-300 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-400">
+              <span class="text-2xl inline-block mb-4 transition-transform duration-300 group-hover:scale-110">💬</span>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Chat integrado</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Comunícate con tu equipo directamente dentro de cada proyecto, sin salir de la app.</p>
+            </div>
+            <!-- Feature 4 -->
+            <div class="group p-6 text-left bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm transition-all duration-300 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-400">
+              <span class="text-2xl inline-block mb-4 transition-transform duration-300 group-hover:scale-110">📈</span>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Informes y métricas</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Genera informes detallados sobre rendimiento, avance y carga de trabajo del equipo.</p>
+            </div>
+            <!-- Feature 5 -->
+            <div class="group p-6 text-left bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm transition-all duration-300 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-400">
+              <span class="text-2xl inline-block mb-4 transition-transform duration-300 group-hover:scale-110">🔗</span>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Integraciones</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Conecta TaskFlow con tus herramientas favoritas para centralizar todo tu trabajo.</p>
+            </div>
+            <!-- Feature 6 -->
+            <div class="group p-6 text-left bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm transition-all duration-300 hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-400">
+              <span class="text-2xl inline-block mb-4 transition-transform duration-300 group-hover:scale-110">🔒</span>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Seguridad avanzada</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Protege los datos de tu equipo con cifrado, permisos por rol y auditoría de accesos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Planes para todos los equipos</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-12">Empieza gratis y escala cuando lo necesites. Sin sorpresas.</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+            <!-- Starter -->
+            <div class="p-8 text-left bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Starter</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Ideal para empezar a organizar tu trabajo personal o en equipo.</p>
+              <p class="text-4xl font-bold text-gray-900 dark:text-white mb-6">0€<span class="text-base font-normal text-gray-600 dark:text-gray-400">/mes</span></p>
+              <ul class="space-y-2 mb-8">
+                <li class="text-sm text-gray-600 dark:text-gray-300">3 proyectos</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">10 tareas por proyecto</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">1 GB de almacenamiento</li>
+              </ul>
+              <button type="button" class="border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white px-6 py-3 rounded-lg transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-700">Empezar gratis</button>
+            </div>
+
+            <!-- Pro -->
+            <div class="scale-105 p-8 text-left bg-white dark:bg-gray-800 rounded-2xl border-2 border-indigo-600 ring-2 ring-indigo-600 shadow-lg">
+              <span class="inline-block bg-indigo-50 dark:bg-indigo-600/10 text-indigo-700 dark:text-indigo-400 text-sm font-medium px-3 py-1 rounded-full mb-4">Más popular</span>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Pro</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Para equipos que necesitan más potencia y flexibilidad.</p>
+              <p class="text-4xl font-bold text-gray-900 dark:text-white mb-6">12€<span class="text-base font-normal text-gray-600 dark:text-gray-400">/mes</span></p>
+              <ul class="space-y-2 mb-8">
+                <li class="text-sm text-gray-600 dark:text-gray-300">Proyectos ilimitados</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">Tareas ilimitadas</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">50 GB de almacenamiento</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">Time Tracking</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">Integraciones</li>
+              </ul>
+              <button type="button" class="bg-indigo-600 text-white px-6 py-3 rounded-lg transition-all duration-200 hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-200">Empezar con Pro</button>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="p-8 text-left bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Enterprise</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Para organizaciones que necesitan control total y soporte prioritario.</p>
+              <p class="text-4xl font-bold text-gray-900 dark:text-white mb-6">49€<span class="text-base font-normal text-gray-600 dark:text-gray-400">/mes</span></p>
+              <ul class="space-y-2 mb-8">
+                <li class="text-sm text-gray-600 dark:text-gray-300">Todo lo de Pro</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">Almacenamiento ilimitado</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">SSO & SAML</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">Soporte 24/7</li>
+                <li class="text-sm text-gray-600 dark:text-gray-300">SLA 99.9%</li>
+              </ul>
+              <button type="button" class="border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white px-6 py-3 rounded-lg transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-700">Contactar ventas</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="py-12 md:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Testimonial 1 -->
+            <div class="p-6 text-left bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">"TaskFlow ha cambiado completamente la forma en que trabajamos. Nunca habíamos sido tan productivos."</p>
+              <div class="flex items-center gap-3">
+                <img src="https://i.pravatar.cc/40?img=1" alt="Avatar de Sara" width="40" height="40" class="rounded-full w-10 h-10">
+                <div>
+                  <p class="text-sm font-semibold text-gray-900 dark:text-white">Sara Martín</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Product Manager</p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="p-6 text-left bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">"La función de Time Tracking nos ayudó a identificar dónde perdíamos tiempo. Imprescindible."</p>
+              <div class="flex items-center gap-3">
+                <img src="https://i.pravatar.cc/40?img=2" alt="Avatar de Jose Barroso" width="40" height="40" class="rounded-full w-10 h-10">
+                <div>
+                  <p class="text-sm font-semibold text-gray-900 dark:text-white">Jose Barroso</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Tech Lead</p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="p-6 text-left bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">"Desde que usamos TaskFlow, nuestras entregas llegan a tiempo. El equipo no podría vivir sin él."</p>
+              <div class="flex items-center gap-3">
+                <img src="https://i.pravatar.cc/40?img=3" alt="Avatar de Luís García" width="40" height="40" class="rounded-full w-10 h-10">
+                <div>
+                  <p class="text-sm font-semibold text-gray-900 dark:text-white">Luís García</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Scrum Master</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Final -->
+      <section class="py-12 md:py-16 lg:py-20 bg-linear-to-r from-indigo-600 to-purple-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-bold text-white mb-4">Únete a miles de equipos</h2>
+          <p class="text-lg text-white/80 mb-8">Empieza gratis hoy. Sin tarjeta de crédito. Sin compromisos.</p>
+          <form class="flex justify-center gap-4">
+            <input type="email" placeholder="Escribe tu correo..." class="rounded-lg bg-white/10 text-white placeholder-white/60 border border-white/20 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent">
+            <button type="submit" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg transition-all duration-200 hover:bg-gray-50">Empezar ahora</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+
+          <div>
+            <span class="text-white font-bold text-lg">TaskFlow</span>
+            <p class="text-gray-400 text-sm mt-2">La herramienta de productividad para equipos modernos.</p>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4">Producto</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 text-sm">Funciones</a></li>
+              <li><a href="#" class="text-gray-400 text-sm">Precios</a></li>
+              <li><a href="#" class="text-gray-400 text-sm">Integraciones</a></li>
+              <li><a href="#" class="text-gray-400 text-sm">Changelog</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 text-sm">Sobre nosotros</a></li>
+              <li><a href="#" class="text-gray-400 text-sm">Blog</a></li>
+              <li><a href="#" class="text-gray-400 text-sm">Careers</a></li>
+              <li><a href="#" class="text-gray-400 text-sm">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 text-sm">Privacidad</a></li>
+              <li><a href="#" class="text-gray-400 text-sm">Términos</a></li>
+              <li><a href="#" class="text-gray-400 text-sm">Cookies</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <hr class="border-gray-700 my-8">
+        <p class="text-center text-gray-400 text-sm">© 2026 TaskFlow. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>

@@ -1,7 +1,7 @@
 {
   "name": "taskflow-landing",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,10 +9,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.3.1"
+    "vite": "^8.0.10"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "tailwindcss": "^4.1.18"
+    "@tailwindcss/vite": "^4.2.4",
+    "tailwindcss": "^4.2.4"
   }
 }
